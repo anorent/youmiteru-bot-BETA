@@ -14,7 +14,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("**Статус:**", `${message.author.presence.status}`, true)
         .addField("**ID:**", `${message.author.id}`, true)
         .addField("**Аккаунт создан:**", `${message.author.createdAt}`, true)
-        .setFooter(`Витуся^^ | Зефирка♥#6666`, bot.user.displayAvatarURL);
+        .setFooter(`Druid^^`, bot.user.displayAvatarURL);
     message.channel.send({ embed: uEmbed });
 }
 

@@ -13,7 +13,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("**GOD:**", `${message.guild.owner}`, true)
         .addField("**Число участников:**", `${message.guild.memberCount}`, true)
         .addField("**Количество ролей:**", `${message.guild.roles.size}`, true)
-        .setFooter(`Витуся^^ | Зефирка♥#6666`, bot.user.displayAvatarURL);
+        .setFooter(`Druid^^`, bot.user.displayAvatarURL);
     message.channel.send({ embed: sEmbed });
 }
 
