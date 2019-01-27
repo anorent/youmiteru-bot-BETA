@@ -6,7 +6,7 @@ module.exports = bot => {
         //bot.user.setActivity("Префикс: r!", { type: "STREAMING", url: "https://www.twitch.tv/strandable" });
 
     let statuses = [
-        "v!help",
+        "r!help",
         `over ${bot.users.size} пользователей`
     ]
 
