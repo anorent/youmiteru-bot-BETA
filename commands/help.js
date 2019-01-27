@@ -14,8 +14,8 @@ module.exports.run = async(bot, message, args) => {
             command = bot.commands.get(command);
             var SHembed = new Discord.RischEmbed()
                 .setColor(colours.violet)
-                .setAuthor('Витуся^^ Помощь', message.guild.iconURL)
-                .setDescription(`Префикс Виты: ${prefix}\n\n**Команда:** ${command.config.name}\n**Описание:** ${command.config.description || "Нет описания"}\n**Использование:** ${command.config.usage || "No Usage"}\n**Доступно:** ${command.config.accesableby || "Members"}\n**Варианты:** ${command.config.noalias || command.config.aliases}`)
+                .setAuthor('Druid^^ Помощь', message.guild.iconURL)
+                .setDescription(`Префикс Druida: ${prefix}\n\n**Команда:** ${command.config.name}\n**Описание:** ${command.config.description || "Нет описания"}\n**Использование:** ${command.config.usage || "No Usage"}\n**Доступно:** ${command.config.accesableby || "Members"}\n**Варианты:** ${command.config.noalias || command.config.aliases}`)
             message.channel.send(SHembed);
         }
     }
@@ -29,12 +29,12 @@ module.exports.run = async(bot, message, args) => {
 
         let Sembed = new Discord.RichEmbed()
             .setColor(colours.cyan)
-            .setAuthor('Витуся^^ Помощь', message.guild.iconURL)
+            .setAuthor('Druid^^ Помощь', message.guild.iconURL)
             .setThumbnail(bot.user.displayAvatarURL)
             .setTimestamp()
             .setDescription(`Это доступные для вас команды\n Префикс бота: ${prefix}`)
             .addField(`Команды:`, "``cat`` ``dog`` ``meme`` ``help`` ``serverinfo`` ``userinfo``")
-            .setFooter("Витуся^^", bot.user.displayAvatarURL)
+            .setFooter("Druid^^", bot.user.displayAvatarURL)
         message.channel.send(embed).then(m => m.delete(10000));
         message.author.send(Sembed)
     }

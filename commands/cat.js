@@ -17,7 +17,7 @@ module.exports.run = async(bot, message, args) => {
         .setAuthor('Кисяка^^', message.guild.iconURL)
         .setImage(body.file)
         .setTimestamp()
-        .setFooter(`Витуся^^`, bot.user.displayAvatarURL)
+        .setFooter(`Druid^^`, bot.user.displayAvatarURL)
 
     message.channel.send({ embed: cEmbed })
 

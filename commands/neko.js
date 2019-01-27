@@ -17,7 +17,7 @@ module.exports.run = async(bot, message, args) => {
         .setAuthor('Некууська♥', message.guild.iconURL)
         .setImage(body.file)
         .setTimestamp()
-        .setFooter(`Витуся^^ | Зефирка♥#6382`, bot.user.displayAvatarURL)
+        .setFooter(`Druid^^ | Зефирка♥#6382`, bot.user.displayAvatarURL)
 
     message.channel.send({ embed: nEmbed })
 
