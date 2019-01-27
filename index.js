@@ -2,6 +2,9 @@ GLOBAL.Discord = require("discord.js");
 GLOBAL.botconfig = require("./botconfig.json");
 GLOBAL.colours = require("./colours.json");
 GLOBAL.superagent = require("superagent")
+GLOBAL.request = require('request');
+
+GLOBAL.ytdl = require('ytdl-core');
 
 GLOBAL.bot = new Discord.Client({ disableEveryone: true });
 
