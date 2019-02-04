@@ -1,12 +1,9 @@
-GLOBAL.Discord = require("discord.js");
-GLOBAL.botconfig = require("./botconfig.json");
-GLOBAL.colours = require("./colours.json");
-GLOBAL.superagent = require("superagent")
-GLOBAL.request = require('request');
+﻿const Discord = require("discord.js");
+const botconfig = require("./botconfig.json");
+const colours = require("./colours.json");
+const superagent = require("superagent")
 
-GLOBAL.ytdl = require('ytdl-core');
-
-GLOBAL.bot = new Discord.Client({ disableEveryone: true });
+const bot = new Discord.Client({ disableEveryone: true });
 
 require("./util/eventHandler")(bot)
 
