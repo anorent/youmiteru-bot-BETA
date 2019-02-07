@@ -41,8 +41,8 @@ Coded special for **Regress** _discord server_
 ```r![command] <user>```
 
 _Examples_:
-	r!happy - be happy!
-	r!hug <user> - hug your friend
+	* r!happy - be happy!
+	* r!hug <user> - hug your friend
 
 Also, you can type 'r!help' to get more commands!
 
