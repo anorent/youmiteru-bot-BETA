@@ -47,8 +47,8 @@ _Examples_:
 Also, you can type 'r!help' to get more commands!
 
 #### Developers
-@anorent - Server and Repository Admin
-@Vism-noise - Front Dev
-@R-Yuliya - Dev
+anorent - Server and Repository Admin
+Vism-noise - Front Dev
+R-Yuliya - Dev
 
 
