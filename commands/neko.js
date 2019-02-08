@@ -8,16 +8,16 @@ module.exports.run = async(bot, message, args) => {
     let msg = await message.channel.send("Загрузка...")
 
     let { body } = await superagent
-        .get("https://nekos.life/")
+        .get('https://nekos.life/api/v2/img/neko')
         //console.Log(body.file)
     if (!{ body }) return message.channel.send("Ой,тут какая-то ошибка.Может попробуешь ещё раз?^^")
 
     let nEmbed = new Discord.RichEmbed()
         .setColor(colours.violet)
-        .setAuthor('Некууська♥', message.guild.iconURL)
-        .setImage(body.file)
+        .setAuthor('Некуууськааа♥', message.guild.iconURL)
+        .setImage(body.url)
         .setTimestamp()
-        .setFooter(`Druid^^ | Зефирка♥#6382`, bot.user.displayAvatarURL)
+        .setFooter(`Витуся^^ | Зефирка♥#6382`, bot.user.displayAvatarURL)
 
     message.channel.send({ embed: nEmbed })
 
@@ -28,5 +28,5 @@ module.exports.run = async(bot, message, args) => {
 module.exports.config = {
     name: "neko",
     aliases: [],
-    description: "Отправляет картинку с неко♥"
+    description: "Отправляет некуську♥"
 }
