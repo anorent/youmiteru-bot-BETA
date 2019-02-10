@@ -1,18 +1,32 @@
 {
-  "name": "druid",
+  "name": "vita",
   "version": "1.0.0",
   "description": "Just a bot",
   "main": "index.js",
   "dependencies": {
+    "array-sort": "^1.0.0",
+    "cheerio": "^1.0.0-rc.2",
     "discord.js": "^11.4.2",
     "discord.js-commando": "^0.10.0",
+    "fortnite": "^4.1.1",
     "fs": "0.0.1-security",
-    "superagent": "^4.1.0"
+    "isgd": "^1.1.3",
+    "mathjs": "^5.4.2",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "opusscript": "0.0.6",
+    "pornhub-api": "0.0.1",
+    "profanities": "^2.9.0",
+    "superagent": "^4.1.0",
+    "table": "^5.2.2",
+    "weather-js": "^2.0.0",
+    "ytdl-core": "^0.29.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zefirka",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": []
 }
