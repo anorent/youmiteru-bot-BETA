@@ -19,7 +19,7 @@ exports.run = (client, message) => {
         .addField("Команд", `${client.commands.size.toLocaleString()}`, true)
         .addField("Discord.js", `v${version}`, true)
         .addField("Сайт", "а вот его и нету", true)
-        .addField("Создатели", "<@378702823136821251> - Создатель\n <@437243945085435914> - Вдохновление");
+        .addField("Создатели", "<@325228376149327872> - Guild Owner \n <@378702823136821251> - Кодер \n <@325390946583838720> - кодер ");
 
     message.channel.send(embed);
 };
