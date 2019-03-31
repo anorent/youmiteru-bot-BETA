@@ -6,8 +6,8 @@ module.exports = bot => {
     bot.user.setActivity(`Смотрит на  ${bot.users.size} пользователей`, { type: "STREAMING", url: "https://www.twitch.tv/strandable" });
 
     let statuses = [
-        `*Youmiteru One Love*` 
-        `Префикс: !`
+        `*Youmiteru one love*` 
+        `Prefix: !`
     ]
 
     setInterval(function() {
