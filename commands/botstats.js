@@ -1,6 +1,5 @@
 const { version } = require("discord.js");
 const moment = require("moment");
-require("moment-duration-format");
 const Discord = require("discord.js");
 
 module.exports.run = async(client, message, args, ops) => {
