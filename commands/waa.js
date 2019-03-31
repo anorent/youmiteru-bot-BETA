@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     const user = message.mentions.users.first();
 
     const cryis = ["https://media.tenor.com/images/7e623e17dd8c776aee5e0c3e0e9534c9/tenor.gif", "https://media1.tenor.com/images/ce52606293142a2bd11cda1d3f0dc12c/tenor.gif?itemid=5184314", "https://media.tenor.com/images/315b2b6e191de690b611cbcb95924607/tenor.gif", "https://media1.tenor.com/images/7ef999b077acd6ebef92afc34690097e/tenor.gif?itemid=10893043"];

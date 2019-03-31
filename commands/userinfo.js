@@ -1,23 +1,24 @@
-const Discord = require("discord.js")
-const botconfig = require("../botconfig.json");
-const colours = require("../colours.json");
+const Discord = require("discord.js");
 
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
 
-module.exports.run = async(bot, message, args) => {
+    let user = message.mentions.members.first() || message.guild.members.get(args[0]) || message.author
+
     let uEmbed = new Discord.RichEmbed()
-        .setColor(colours.gold)
+        .setColor('#af03f9')
         .setTitle("Информация о пользователе")
-        .setThumbnail(message.guild.iconURL)
-        .setAuthor(`${message.author.username} информация`, message.author.displayAvatarURL)
-        .addField("**Имя пользователя:**", `${message.author.username}`, true)
-        .addField("**Тэг:**", `${message.author.discriminator}`, true)
-        .addField("**Статус:**", `${message.author.presence.status}`, true)
-        .addField("**ID:**", `${message.author.id}`, true)
-        .addField("**Аккаунт создан:**", `${message.author.createdAt}`, true)
-        .setFooter(`Druid^^`, bot.user.displayAvatarURL);
+        .setThumbnail(user.displayAvatarURL)
+        .setAuthor(`${user.username} информация`, user.displayAvatarURL)
+        .addField("🌐 | **Имя пользователя:**", `${user.username}`)
+        .addField("🔑 | **Тэг:**", `${user.discriminator}`)
+        .addField("💡 | **Статус:**", `${user.presence.status[0].toUpperCase() + user.presence.status.slice(1)}`)
+        .addField("🎮 | **Играет в:**", ` ${(message.author.presence.game && message.author.presence.game && message.author.presence.game.name) || 'Не играет на данный момент'}`)
+        .addField("🆔 | **ID:**", `${user.id}`)
+        .addField("📅 | **Аккаунт создан:**", `${message.author.createdAt}`)
+        .setFooter(`Yomi | Зефирка♥#6382`, bot.user.displayAvatarURL)
     message.channel.send({ embed: uEmbed });
 }
-
 
 module.exports.config = {
     name: "userinfo",

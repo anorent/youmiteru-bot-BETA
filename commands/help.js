@@ -1,42 +1,26 @@
-const Discord = require("discord.js")
-const botconfig = require("../botconfig.json");
-const colours = require("../colours.json");
-const prefix = botconfig.prefix
+const Discord = require("discord.js");
 
-
-module.exports.run = async(bot, message, args) => {
-
-    if (args[0] == "help") return message.channel.send(`Just do ${prefix}help instead.`)
-
-    if (args[0]) {
-        let command = args[0];
-        if (bot.commands.has(command)) {
-            command = bot.commands.get(command);
-            var SHembed = new Discord.RischEmbed()
-                .setColor(colours.violet)
-                .setAuthor('Витуся^^ Помощь', message.guild.iconURL)
-                .setDescription(`Префикс Виты: ${prefix}\n\n**Команда:** ${command.config.name}\n**Описание:** ${command.config.description || "Нет описания"}\n**Использование:** ${command.config.usage || "No Usage"}\n**Доступно:** ${command.config.accesableby || "Members"}\n**Варианты:** ${command.config.noalias || command.config.aliases}`)
-            message.channel.send(SHembed);
-        }
-    }
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
 
     if (!args[0]) {
         message.delete();
-        let embed = new Discord.RichEmbed()
-            .setAuthor('Помощь по командам', message.guild.iconURL)
-            .setColor(colours.cyan)
-            .setDescription(`${message.author.username} проверьте личные сообщения!`)
 
         let Sembed = new Discord.RichEmbed()
-            .setColor(colours.cyan)
-            .setAuthor('Витуся^^ Помощь', message.guild.iconURL)
+            .setColor('RANDOM')
+            .setAuthor('Youmiteru Помощь')
             .setThumbnail(bot.user.displayAvatarURL)
             .setTimestamp()
-            .setDescription(`Это доступные для вас команды\n Префикс бота: ${prefix}`)
-            .addField(`Команды:`, "``cat`` ``dog`` ``poke`` ``sleepy`` ``waa`` ``coin`` ``lick`` ``pout`` ``pat`` ``hug`` ``suggestion`` ``weather`` ``slap`` ``stare`` ``thumbsup`` ``wasted`` ``nom`` ``space`` ``shorten`` ``8ball`` ``roles`` ``emojify`` ``dance`` ``awoo`` ``bugs`` ``fox``  ``meme`` ``help`` ``serverinfo`` ``userinfo`` ``suicide`` ``love`` ``neko`` ``depression`` ``blush``")
-            .setFooter("Если есть какие-то вопросы,то обращайтесь к Зефирка❤ или Anorent🍷", bot.user.displayAvatarURL)
-        message.channel.send(embed).then(m => m.delete(10000));
-        message.author.send(Sembed)
+            .setDescription(`Это доступные для вас команды\n Префикс бота: v!`)
+            .addField(`🎭 | Действия и эмоции:`, " ``poke`` ``sleepy`` ``waa``  ``lick`` ``pout`` ``idk`` ``pat`` ``hug`` ``slap`` ``stare`` ``thumbsup`` ``wasted`` ``nom`` ``dance`` ``suicide`` ``love`` ``blush``")
+            .addField(`🔞 | NSFW:`, " ``nhent`` ``hentai`` ``porn`` ``blowjob`` ``boobs`` ``anal`` ``trap`` ")
+            .addField(`👑 | Модерация:`, " ``ban`` ``lockdown`` ``clear`` ``say`` ``mute`` ``unmute`` ``prefix`` ")
+            .addField(`🎵 | Музыка:`, " Временно не работает ") //``play`` ``leave`` ``skip`` ``queue`` ``resume`` ``pause``
+            .addField(`🌅 | Картинки:`, " ``cat`` ``neko`` ``fox`` ``meme`` ``awoo`` ``space`` ``woof``")
+            .addField(`⭕ | Прочие:`, " ``embed`` ``helpembed`` ``atableflip`` ``ship`` ``calc`` ``textflip`` ``sexyrate`` ``roleinfo`` ``helpembed`` ``weather`` ``avatar`` ``roles`` ``8ball`` ``emojify`` ``coin`` ``serverinfo`` ``userinfo`` ``stats`` ``suggestion`` ``shorten`` ")
+            .addField(`Приглашение нашего публичного бота с похожим функционалом:`, "https://discordapp.com/oauth2/authorize?client_id=535735994524368911&scope=bot&permissions=8")
+            .setFooter(`Youmiteru`, bot.user.displayAvatarURL)
+        message.channel.send(Sembed)
     }
 }
 

@@ -4,7 +4,8 @@ const colours = require("../colours.json");
 const superagent = require("superagent")
 
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     let msg = await message.channel.send("Загрузка...")
 
     if (!message.channel.nsfw) return message.channel.send("Тут низя такое смотреть! Перейдите в NSFW канал");
@@ -19,7 +20,7 @@ module.exports.run = async(bot, message, args) => {
         .setAuthor("Hentaaai ♥", message.guild.iconURL)
         .setImage(body.url)
         .setTimestamp()
-        .setFooter(`Витуся^^ | Зефирка♥#6382`, bot.user.displayAvatarURL)
+        .setFooter(`Yomi | Зефирка♥#6382`, bot.user.displayAvatarURL)
 
     message.channel.send({ embed: nhEmbed })
 

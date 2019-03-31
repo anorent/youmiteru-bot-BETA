@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy')
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+  if(message.guild.id == ops.bl) return;
   if(!message.channel.nsfw) {return message.channel.send(`Тут низя такое смотреть! Перейдите в NSFW канал `)}
   else{
   randomPuppy('porn')

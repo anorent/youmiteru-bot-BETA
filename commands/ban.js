@@ -4,7 +4,8 @@ const colours = require("../colours.json");
 const superagent = require("superagent")
 
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
 
     if (!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("У вас нет прав для использования данной команды")
 
@@ -29,7 +30,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("Модерация:", "ban")
         .addField("Пользователь:", banMember.user.username)
         .addField("Модератор:", message.author.username)
-        .addField("Прчина:", reason)
+        .addField("Причина:", reason)
         .addField("Дата:", message.createdAt.toLocaleString())
 
     let sChannel = message.guild.channels.find(c => c.name === "modlogs")

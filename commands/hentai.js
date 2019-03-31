@@ -4,8 +4,11 @@ const colours = require("../colours.json");
 const superagent = require("superagent")
 
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     let msg = await message.channel.send("Загрузка...")
+
+    if (!message.channel.nsfw) return message.channel.send("Тут низя такое смотреть! Перейдите в NSFW канал");
 
     let { body } = await superagent
         .get('https://nekos.life/api/v2/img/hentai', `https://nekos.life/api/v2/img/Random_hentai_gi`)
@@ -17,7 +20,7 @@ module.exports.run = async(bot, message, args) => {
         .setAuthor('Хентайчик♥', message.guild.iconURL)
         .setImage(body.url)
         .setTimestamp()
-        .setFooter(`Druid^^ | Зефирка♥#6382`, bot.user.displayAvatarURL)
+        .setFooter(`Yomi | Зефирка♥#6382`, bot.user.displayAvatarURL)
 
     message.channel.send({ embed: hEmbed })
 

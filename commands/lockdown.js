@@ -1,6 +1,7 @@
 const ms = require("ms");
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     if (!bot.lockit) bot.lockit = [];
     const time = args.join(" ");
     const validUnlocks = ["release", "unlock"];

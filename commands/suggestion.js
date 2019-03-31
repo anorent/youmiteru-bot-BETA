@@ -1,18 +1,18 @@
 const Discord = require('discord.js');
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
 
     let userSuggestion = args.slice(0).join(" ");
     let user = message.author
 
-    // if there is NO message: It will delete the command message then reply with the correct usage then delete that message after 4 seconds.
 
     if (args.length === 0) {
         message.delete();
         return message.reply('v!suggestion <текст>').then(m => m.delete(4000))
     };
 
-    // if there is a message: It will delete the command message then send the embed and then react with emojis in order.
+
 
     message.delete();
     let suEmbed = new Discord.RichEmbed()

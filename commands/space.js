@@ -3,7 +3,8 @@ const botconfig = require("../botconfig.json");
 const colours = require("../colours.json");
 const superagent = require("superagent")
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     // message.delete();
 
     let user = message.author.username;
@@ -17,7 +18,7 @@ module.exports.run = async(bot, message, args) => {
         spEmbed.setImage(urls[Math.floor(Math.random() * urls.length)]);
         spEmbed.setColor('RANDOM');
         spEmbed.setTimestamp();
-        spEmbed.setFooter('Витуська^^ | Зефирка♥#6382', bot.user.displayAvatarURL);
+        spEmbed.setFooter(`Yomi | Зефирка♥#6382`, bot.user.displayAvatarURL)
 
         message.channel.send(spEmbed)
     });

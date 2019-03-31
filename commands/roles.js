@@ -1,12 +1,13 @@
 const Discord = module.require('discord.js');
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
 
-    ROLEZZ = message.guild.roles.array()
+    PIDORS = message.guild.roles.array()
 
-    var ROLES = "";
+    var PIDORS = "";
 
-    ROLEZZ.forEach(function(element) {
+    PIDORS.forEach(function(element) {
         ROLES += element.name + "\n"
     });
 

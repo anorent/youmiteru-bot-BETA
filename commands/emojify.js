@@ -22,7 +22,8 @@ const mapping = {
 });
 
 
-exports.run = async(client, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     if (args.length < 1) {
         message.channel.send("Вы должны ввести текст");
     }

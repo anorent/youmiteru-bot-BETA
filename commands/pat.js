@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
-module.exports.run = async(bot, message, args) => {
+module.exports.run = async(bot, message, args, ops) => {
+    if(message.guild.id == ops.bl) return;
     const user = message.mentions.users.first();
     if (!user) return message.reply("Укажите пользователя").catch(console.error);
 
