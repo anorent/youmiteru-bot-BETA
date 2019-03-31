@@ -3,10 +3,11 @@
 
 module.exports = bot => {
     console.log(`${bot.user.username} is online`)
-    bot.user.setActivity(`Префикс: ! | Смотрит на  ${bot.users.size} пользователей`, { type: "STREAMING", url: "https://www.twitch.tv/strandable" });
+    bot.user.setActivity(`Смотрит на  ${bot.users.size} пользователей`, { type: "STREAMING", url: "https://www.twitch.tv/strandable" });
 
     let statuses = [
         `*Youmiteru One Love*` 
+        `Префикс: !`
     ]
 
     setInterval(function() {
