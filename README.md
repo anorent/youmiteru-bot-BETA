@@ -1,54 +1,13 @@
-# Druid
-![Druid](https://cdn.discordapp.com/attachments/542059731842498571/542846633193504780/druid_head.png)
+# YoumiDev
 
-Fun, administration and more!
-Coded special for **Regress** _discord server_
+Все файлы команд находятся в папке {commands} <br />
+Добавление серверов в чёрный список происходит вручную, в файле {index} <br />
+В файле {botconfig} редактируется префикс (Токен лежит на Heroku(Heroku является временным хостингом на момент того, когда выключается сервер))
 
-## Commands & Prefix
-  Bot prefix - **r!**
+# Модули
 
-**Command List**
-* Fun
-  * Cat
-  * Dog
-  * Happy
-    * Sad
-    * Hug
-    * Pat
-    * Sleep
-  * Meme
-  * ...
-* Administration
-  * Ban
-  * Clear
-  * Embed Generator
-    * Embed Generator Help
-  * Mute
-    * Unmute
-  * ...
-* Info
-  * Help
-  * User Info
-  * Server Info
-* User
-  * Check Balance
-  * ...
-* Music
-  * Play
-* ...
+Если вам требуется установить модуль, то для начала установите все модули из {package} и скачайте модуль который вам требуется, после обновите файлы {package} и {package-lock} <br />
 
-### Usage
-```r![command] <user>```
+# Доступ к репозитории 
 
-_Examples_:
-* r!happy - be happy!
-* r!hug <user> - hug your friend
-
-Also, you can type 'r!help' to get more commands!
-
-#### Developers
-* anorent - Server and Repository Admin
-* Vism-noise - Front Dev
-* R-Yuliya - Dev
-
-
+Репозитрий могут видеть только: Derise, Vism, 10 20
