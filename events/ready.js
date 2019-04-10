@@ -16,8 +16,8 @@ module.exports = bot => {
     }, 1800000)
  setInterval( () => {
 let voice = 0;
-                client.guilds.get("485018137134235648").channels.filter(chan => chan.type === 'voice').forEach((channel) => {voice += channel.members.size});
-client.channels.get("565552384361627663").setName(`Голосовой\u2009онлайн:\u2009${voice}`)
+                bot.guilds.get("485018137134235648").channels.filter(chan => chan.type === 'voice').forEach((channel) => {voice += channel.members.size});
+bot.channels.get("565552384361627663").setName(`Голосовой\u2009онлайн:\u2009${voice}`)
 }, 5000)
 
 }
