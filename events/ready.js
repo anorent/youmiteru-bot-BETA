@@ -43,6 +43,5 @@ bot.on("guildMemberRemove", (member) => {
         .setImage(member.user.avatarURL)
         .setTimestamp()
     channel.send({embed});
-    member.send('**Жаль что ты ушёл с `Youmiteru`**');
 });
 }
