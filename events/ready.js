@@ -21,7 +21,7 @@ module.exports = bot => {
     }, 5000)
 
     bot.on('message', message => {
-            const channel = message.guild.channels.find(id=566878376980381706);
+            const channel = message.guild.channels.find(id=`566878376980381706`);
         channel.setName(`${message.guild.users.size} пользователей`);
     });
 }
