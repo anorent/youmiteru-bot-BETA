@@ -23,22 +23,22 @@ module.exports = bot => {
     const channel = member.guild.channels.find(ch => ch.name === '「📜」приветствия');
     if (!channel) return;
     const embed = new Discord.RichEmbed()
-        .setTitle("Новый пользователь")
+        .setTitle("Добро Пожаловать!")
         .setAuthor(member.user.username, member.user.avatarURL)
         .setColor(0x8a57e5)
-        .setDescription("Пользователь " + member.user.username + " пришёл.\n Желаем ему хорошо провести время!")
+        .setDescription("Здравствуй " + member.user.username + ".\n Добро Пожаловать на Youmiteru!")
         .setImage(member.user.avatarURL)
         .setTimestamp()
     channel.send({embed});
 });
 bot.on("guildMemberRemove", (member) => {
-    const channel = member.guild.channels.find(ch => ch.name === '「📜」приветствия');
+    const channel = member.guild.channels.find(ch => ch.name === '🛎┋leave-log');
     if (!channel) return;
     const embed = new Discord.RichEmbed()
-        .setTitle("Вышедший пользователь")
+        .setTitle("User Left")
         .setAuthor(member.user.username, member.user.avatarURL)
         .setColor(0x8a57e5)
-        .setDescription("Пользователь " + member.user.username + " ушёл.\n Мы будем по тебе скучать!")
+        .setDescription("Пользователь " + member.user.username + " ливнул .")
         .setImage(member.user.avatarURL)
         .setTimestamp()
     channel.send({embed});
