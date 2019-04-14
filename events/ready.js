@@ -27,7 +27,7 @@ module.exports = bot => {
         .setAuthor(member.user.username, member.user.avatarURL)
         .setColor(0x8a57e5)
         .setDescription("Пользователь " + member.user.username + " пришёл.\n Желаем ему хорошо провести время!")
-        setImage(member.user.avatarURL)
+        .setImage(member.user.avatarURL)
         .setTimestamp()
     channel.send({embed});
 });
