@@ -19,8 +19,30 @@ module.exports = bot => {
         bot.guilds.get("485018137134235648").channels.filter(chan => chan.type === 'voice').forEach((channel) => {voice += channel.members.size});
     bot.channels.get("566351514831028234").setName(`Голосовой\u2009онлайн:\u2009${voice}`)
     }, 5000)
-    bot.on('message', message => {
-            const channel = message.guild.channels.find(id=566878376980381706)
-        channel.setName(`${message.guild.users.size} пользователей`);
-    });
+   bot.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find(ch => ch.name === '「📜」приветствия');
+    if (!channel) return;
+    const embed = new Discord.RichEmbed()
+        .setTitle("Новый пользователь")
+        .setAuthor(member.user.username, member.user.avatarURL)
+        .setColor(0x8a57e5)
+        .setDescription("Пользователь " + member.user.username + " пришёл.\n Желаем ему хорошо провести время!")
+        setImage(member.user.avatarURL)
+        .setTimestamp()
+    channel.send({embed});
+    member.send('**Желаем тебе хорошо провести время на `Youmiteru`!**');
+});
+bot.on("guildMemberRemove", (member) => {
+    const channel = member.guild.channels.find(ch => ch.name === '「📜」приветствия');
+    if (!channel) return;
+    const embed = new Discord.RichEmbed()
+        .setTitle("Вышедший пользователь")
+        .setAuthor(member.user.username, member.user.avatarURL)
+        .setColor(0x8a57e5)
+        .setDescription("Пользователь " + member.user.username + " ушёл.\n Мы будем по тебе скучать!")
+        .setImage(member.user.avatarURL)
+        .setTimestamp()
+    channel.send({embed});
+    member.send('**Жаль что ты ушёл с `Youmiteru`**');
+});
 }
