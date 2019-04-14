@@ -30,7 +30,6 @@ module.exports = bot => {
         setImage(member.user.avatarURL)
         .setTimestamp()
     channel.send({embed});
-    member.send('**Желаем тебе хорошо провести время на `Youmiteru`!**');
 });
 bot.on("guildMemberRemove", (member) => {
     const channel = member.guild.channels.find(ch => ch.name === '「📜」приветствия');
