@@ -20,8 +20,8 @@ module.exports = bot => {
     bot.channels.get("566351514831028234").setName(`Голосовой\u2009онлайн:\u2009${voice}`)
     }, 5000)
  
-     setInterval( () => {
-    bot.on('message', message => 
+     setInterval( () => 
+    bot.on('message', message => {
             const channel = message.guild.channels.find(id=566878376980381706);
         channel.setName(`${message.guild.users.size} пользователей`);
     }, 5000)
