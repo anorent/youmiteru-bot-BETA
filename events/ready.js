@@ -19,9 +19,10 @@ let voice = 0;
                 bot.guilds.get("485018137134235648").channels.filter(chan => chan.type === 'voice').forEach((channel) => {voice += channel.members.size});
 bot.channels.get("566351514831028234").setName(`Голосовой\u2009онлайн:\u2009${voice}`)
 }, 5000)
+
 bot.on('message', message => {
     try{    
-        const channel = message.guild.channels.find(id=айди_канала);
+        const channel = message.guild.channels.find(id=566878376980381706);
             channel.setName(`${message.guild.users.size} пользователей`);
     catch(err){
         // nothing interesting
