@@ -43,4 +43,48 @@ bot.on("guildMemberRemove", (member) => {
         .setTimestamp()
     channel.send({embed});
 });
+if(newState.channel === null || newState.channel.id !== '567736089587220481') return
+    const category = newState.guild.channels.find(c => c.id === '487930672694951936')
+    const channels = newState.guild.channels
+    const member = newState.member
+    const guild = newState.guild
+    
+    if (channels.find(c => c.name === member.user.username) === undefined) {
+        const newChannel = channels.create(member.user.username, { 
+            type: 'voice',
+            topic: 'Личный канал пользователя ' + member.user.username,
+            parent: category,
+            permissionOverwrites: [
+                {
+                    id: member.user.id,
+                    allow: [ 'CREATE_INSTANT_INVITE',
+                        'MANAGE_CHANNELS',
+                        'PRIORITY_SPEAKER',
+                        'VIEW_CHANNEL',
+                        'SEND_MESSAGES',
+                        'READ_MESSAGE_HISTORY',
+                        'CONNECT',
+                        'SPEAK',
+                        'MUTE_MEMBERS',
+                        'DEAFEN_MEMBERS',
+                        'MOVE_MEMBERS',
+                        'USE_VAD',
+                        'MANAGE_ROLES',
+                        'MANAGE_WEBHOOKS',
+                        'MANAGE_EMOJIS' ]
+                },
+
+                {
+                    id: guild.id,
+                    deny: [ 'VIEW_CHANNEL' ]
+                }
+            ] })
+    
+        newChannel.then((value) => {
+            return member.setVoiceChannel(value)
+        })
+    } else {
+        const oldChannel = guild.channels.find(c => c.name === member.user.username)
+        return member.setVoiceChannel(oldChannel)
+    });
 }
