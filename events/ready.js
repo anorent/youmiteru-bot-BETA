@@ -54,7 +54,7 @@ if(newState.channel === null || newState.channel.id !== '567736089587220481') re
     
         newChannel.then((value) => {
             return member.setVoiceChannel(value)
-        })
+        }
     } else {
         const oldChannel = guild.channels.find(c => c.name === member.user.username)
         return member.setVoiceChannel(oldChannel)
