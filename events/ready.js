@@ -58,7 +58,7 @@ if(newState.channel === null || newState.channel.id !== '567736089587220481') re
     } else {
         const oldChannel = guild.channels.find(c => c.name === member.user.username)
         return member.setVoiceChannel(oldChannel)
-    }); 
+    })
 
      setInterval( () => {
     let voice = 0;
