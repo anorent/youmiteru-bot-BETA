@@ -16,7 +16,7 @@ module.exports = bot => {
         }, 1800000)
 
    bot.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(ch => ch.name === '「📜」приветствия');
+    const channel = member.guild.channels.find(ch => ch.name === '🙋┋join-log');
     if (!channel) return;
     const embed = new Discord.RichEmbed()
         .setTitle("Добро Пожаловать!")
@@ -28,7 +28,7 @@ module.exports = bot => {
     channel.send({embed});
 });
 bot.on("guildMemberRemove", (member) => {
-    const channel = member.guild.channels.find(ch => ch.name === '🛎┋leave-log');
+    const channel = member.guild.channels.find(ch => ch.name === '🏃┋leave-log');
     if (!channel) return;
     const embed = new Discord.RichEmbed()
         .setTitle("User Left")
