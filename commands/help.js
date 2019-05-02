@@ -11,7 +11,7 @@ module.exports.run = async(bot, message, args, ops) => {
             .setAuthor('Youmiteru Помощь')
             .setThumbnail(bot.user.displayAvatarURL)
             .setTimestamp()
-            .setDescription(`Это доступные для вас команды\n Префикс бота: v!`)
+            .setDescription(`Это доступные для вас команды\n Префикс бота: !`)
             .addField(`🎭 | Действия и эмоции:`, " ``poke`` ``sleepy`` ``waa``  ``lick`` ``pout`` ``idk`` ``pat`` ``hug`` ``slap`` ``stare`` ``thumbsup`` ``wasted`` ``nom`` ``dance`` ``suicide`` ``love`` ``blush``")
             .addField(`🔞 | NSFW:`, " ``nhent`` ``hentai`` ``porn`` ``blowjob`` ``boobs`` ``anal`` ``trap`` ")
             .addField(`👑 | Модерация:`, " ``ban`` ``lockdown`` ``clear`` ``say`` ``mute`` ``unmute`` ``prefix`` ")
