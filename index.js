@@ -2,7 +2,7 @@
 const botconfig = require("./botconfig.json");
 const colours = require("./colours.json");
 const superagent = require("superagent")
-const ownerID = '325228376149327872'
+const ownerID = '413962240233046028'
 const blacklist = ''
 
 
